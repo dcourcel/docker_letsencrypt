@@ -1,0 +1,1 @@
+0 5 1,11,21 * * /root/project_env.sh; /root/letsencryptrenew.sh >> /var/log/cron.log 2>&1
