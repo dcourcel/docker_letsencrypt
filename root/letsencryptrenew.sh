@@ -5,7 +5,7 @@ if [ -n "$DRY_RUN" ]; then
 else
     DO_DRY_RUN=""
 fi
-if [ -n "CERTBOT_AGREE" ]; then
+if [ -n "$CERTBOT_AGREE" ]; then
     AGREE_LICENSE=--agree-tos
 else
     AGREE_LICENSE=""
