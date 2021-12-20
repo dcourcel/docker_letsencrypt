@@ -18,4 +18,4 @@ else
     EMAIL_PARAM="--email $EMAIL"
 fi
 
-certbot certonly $DO_DRY_RUN $AGREE_LICENSE $EMAIL_PARAM --manual --manual-auth-hook=/root/authenticator.sh --manual-cleanup-hook=/root/cleanup.sh --manual-public-ip-logging-ok --keep-until-expiring $OPTIONS_DOMAINS
+certbot certonly $DO_DRY_RUN $AGREE_LICENSE $EMAIL_PARAM --manual --manual-auth-hook=/root/authenticator.sh --manual-cleanup-hook=/root/cleanup.sh --keep-until-expiring $OPTIONS_DOMAINS
