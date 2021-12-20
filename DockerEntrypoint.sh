@@ -1,10 +1,26 @@
 #!/bin/ash 
 
-# Execute certbot immediately and exit
-if [ "$1" = "--single-run" ]; then
-    /root/letsencryptrenew.sh
-    exit $?;
-fi;
+if [ $# -gt 1 ]; then
+    echo "The entrypoint can only run with 0 or 1 parameter."
+    exit 1
+fi
+
+if [ -n "$1" ]; then
+    # Execute certbot immediately with --standalone and exit
+    if [ "$1" = "--no-server" ]; then
+        /root/letsencryptcreate.sh
+        exit $?
+    fi;
+
+    # Execute certbot immediately and exit
+    if [ "$1" = "--single-run" ]; then
+        /root/letsencryptrenew.sh
+        exit $?;
+    fi;
+
+    echo "Unknown parameter $1. Exit."
+    exit 2
+fi
 
 
 stopSequence()
